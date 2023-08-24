@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Number Validation</title>
+</head>
+<body>
+    <h1>Contact Number Validation</h1>
+    <form method="POST">
+        <label for="contact_number">Enter Contact Number:</label>
+        <input type="text" id="contact_number" name="contact_number" required>
+        <button type="submit">Check Validity</button>
+    </form>
+    {% if contact_number %}
+        <p>Entered Number: {{ contact_number }}</p>
+        {% if is_valid %}
+            <p style="color: green;">Valid contact number!</p>
+        {% else %}
+            <p style="color: red;">Invalid contact number!</p>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
